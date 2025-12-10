@@ -36,6 +36,34 @@ public class IntegerSP1201 {
 		}
 	}
 	
+	public static void checkArmstrongNumberChatGPT(int input) {
+	    int temp = input;
+	    int digits = 0;
+
+	    // Step 1: Count digits
+	    int num = input;
+	    while (num > 0) {
+	        num /= 10;
+	        digits++;
+	    }
+
+	    // Step 2: Calculate Armstrong sum
+	    int sum = 0;
+	    num = input;
+	    while (num > 0) {
+	        int last = num % 10;
+	        sum += Math.pow(last, digits);
+	        num /= 10;
+	    }
+
+	    // Step 3: Compare
+	    if (sum == temp) {
+	        System.out.println("Armstrong");
+	    } else {
+	        System.out.println("Not an Armstrong");
+	    }
+	}
+	
 	public static void generateFibonacci(int input) {
 		int first=0,second=1,series;
 		
